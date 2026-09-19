@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 import dotenv from 'dotenv';
 // qa is default ENV if not set in the command line
-const ENV = process.env.ENV || 'qa';
+const ENV = (process.env.ENV || 'qa').toLowerCase();
 dotenv.config({path: `config/.env.${ENV}`});
 /**
  * Read environment variables from file.
